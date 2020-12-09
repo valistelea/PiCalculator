@@ -3,6 +3,10 @@
 Hey Karthik
 
 
+Button 1:
+
+[Click me](http://www.google.com){: .btn}
+
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
