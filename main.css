@@ -1,0 +1,36 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+header
+{
+    background-image: url(headerimage.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    font-family: Futura;
+    font-size: 20px;
+    text-align: center;
+}
+
+.box select
+{
+    background: #c04096;
+    color: #fff;
+    padding: 1px;
+    width: 146px;
+    text-align: center;
+    text-align-all: center;
+    border-radius: 4px;
+}
+
+.btn
+{
+    background: #c04096;
+    border-radius: 4px;
+    color: #fff;
+
+
+}
