@@ -15,6 +15,8 @@ class PiCalc:
     def boundCap(self):
         if self.num > 10:
             return "Please try a number below 10!"
+        elif self.num == 0:
+            return "Please try a number greater than 0 but less than 10!"
         else:
             return ""
 
@@ -46,9 +48,9 @@ class PiCalc:
         total = 0
         while i < n:
             if i % 2 == 1:
-                total = total - (float(1/(2*i + 1)))
+                total = total - (float(1)/(2*i+1))
             else:
-                total = total + (float(1/(2*i + 1)))
+                total = total + (float(1)/(2*i+1))
             i += 1
         return 4 * total
     
