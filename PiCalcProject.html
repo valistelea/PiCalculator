@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PiCalc</title>
+      <form>
+    <h6>Select Decimal Approximation:</h6>
+        <div class="box">
+            <select id="list" onchange="getSelectedValue();">
+                <option value="1">1 decimal</option>
+                <option value="2">2 decimals</option>
+                <option value="3">3 decimals</option>
+                <option value="4">4 decimals</option>
+                <option value="5">5 decimals</option>
+                <option value="6">6 decimals</option>
+                <option value="7">7 decimals</option>
+                <option value="8">8 decimals</option>
+                <option value="9">9 decimals</option>
+                <option value="10">10 decimals</option>
+            </select>
+        </div>
+            <script href="/method/">
+                function getSelectedValue() {
+                    var selectedValue = document.getElementById("list").value;
+                    if (selectedValue == "None") {
+                        console.log("You must select a state.");
+                    }
+                    console.log(selectedValue);
+                }
+            </script>
+    <br>
+        <br>
+        <input type="submit" value="Submit" href="/method/">
+        <br>
+        <br>
+</form>
+
+</head>
+<body>
+
+</body>
+</html>
