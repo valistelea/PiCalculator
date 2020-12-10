@@ -23,8 +23,8 @@ class PiCalc:
     """
     def calculation(self):
         if self.boundCap() == "":
-            e = 10 ** (-1 * (self.num + 1)) #using 10^(-n) doesn't guarantee nth decimal place is correct. Using 10^(n-1) as thereshold does
-            n = 2*(e ** (-1) - 1)
+            e = 10 ** (-1 * (self.num + 1)) #using 10^(-n) doesn't guarantee nth decimal place is correct. Using 10^(-(n+1)) as thereshold does
+            n = float((e ** (-1) - 1))/2
             if not isinstance(n, int):
                 n = floor(n + 1)
             #return n
@@ -43,7 +43,6 @@ class PiCalc:
             i += 1
         return 4 * total
 
-obj = PiCalc(9)
+obj = PiCalc(5)
 print(obj.boundCap())
 print(obj.calculation())
-
