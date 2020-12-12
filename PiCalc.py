@@ -2,6 +2,7 @@
 import math
 import matplotlib.pyplot as plt
 import numpy as np
+import sys
 
 class PiCalc:
     # Num == number of decimals of approx
@@ -27,7 +28,7 @@ class PiCalc:
     """
     def calculation_slow_approx(self):
         if self.boundCap() == "":
-            n = getNumberTermsSlowApprox()
+            n = self.getNumberTermsSlowApprox()
             return self.summation(n)
         else:
             return ""
@@ -125,22 +126,34 @@ class PiCalc:
         return float((16 * (0.2 ** (2*i + 1)) - 4 * ((1/239) ** (2*i + 1)))/(2*i + 1))
 
 
+"""
+Arguments from sys.argv represent the entries that the user will have to input in the html website for the approximator to work
+
+Main challenge: when the user clicks submit, execute the main method with arguments from the html file
+"""
 def main():
-    obj = PiCalc(1)
-    # print("FASTER MACHIN APPROXIMATION\n")
-    # for i in range(1, 11):
-    #     obj.setNum(i)
-    #     print("pi to {} decimal place with {} terms summed".format(i, obj.getNumberTermsMachinApprox()))
-    #     print("approximation to pi is {} to {} decimal places of accuracy".format(obj.fast_pi_approximation(), i))
 
-    # print("SLOW APPROXIMATION\n")
-    # for i in range(1, 11):
-    #     obj.setNum(i)
-    #     print("pi to {} decimal place with {} terms summed".format(i, obj.getNumberTermsSlowApprox()))
+    #argument validation
+    if (len(sys.argv) < 3):
+        print("Try again with more arguments")
+        return 
+    if (int(sys.argv[1]) > 10):
+        print("Too many decimal places. Try again")
+        return 
+    obj = PiCalc(int(sys.argv[1]))
+
+    if (sys.argv[2] == "Machin Approximation"):
+        #return string might look like this in the website
+        print("Approximation of pi to {} decimal places is {}. {} terms needed to be summed up".format(sys.argv[1], obj.fast_pi_approximation(), obj.getNumberTermsMachinApprox()))
+        obj.plotFastApproximation()
+    elif (sys.argv[2] == "Slower Approximation"):
+        #return string mihgt look this on the website
+        print("Approximation of pi to {} decimal places is {}. {} terms needed to be summed up".format(sys.argv[1], obj.calculation_slow_approx(), obj.getNumberTermsSlowApprox()))
+        obj.plotSlowApproximation()
+    else:
+        print("Come back for newer approximation methods to be added!")
         
-
-    obj.plotSlowApproximation()
-    obj.plotFastApproximation()
+    return
 
 if __name__ == '__main__':
     main()
