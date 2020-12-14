@@ -47,6 +47,30 @@
         <br>
 </form>
 
+         <form>
+    <h6>Select Approximation Speed:</h6>
+        <div class="box">
+            <select id="list" onchange="getSelectedValue();">
+                <option value="fast">Fast</option>
+                <option value="slow">Slow</option>
+            </select>
+        </div>
+            <script href="/method/">
+                function getSelectedValue() {
+                    var selectedValue = document.getElementById("list").value;
+                    if (selectedValue == "None") {
+                        console.log("You must select a state.");
+                    }
+                    console.log(selectedValue);
+                }
+            </script>
+    <br>
+        <br>
+        <input type="submit" value="Calculate" href="/method/">
+        <br>
+        <br>
+</form>
+
     </header>
 </body>
 </html>
