@@ -46,18 +46,18 @@
          <form>
     <h6>Select Approximation Speed:</h6>
         <div class="box">
-            <select id="list" onchange="getSelectedValue();">
+            <select id="list2" onchange="getSelectValue();">
                 <option value="fast">Fast</option>
                 <option value="slow">Slow</option>
             </select>
         </div>
             <script href="/method/">
-                function getSelectedValue() {
-                    var selectedValue = document.getElementById("list").value;
-                    if (selectedValue == "None") {
-                        console.log("You must select a state.");
+                function getSelectValue() {
+                    var selectValue = document.getElementById("list").value;
+                    if (selectValue == "None") {
+                        console.log("You must select a speed.");
                     }
-                    console.log(selectedValue);
+                    console.log(selectValue);
                 }
             </script>
     <br>
